@@ -21,9 +21,9 @@ export const SignInPage = () => {
     return (
         <div className="full-height-page">
             <div className="centered-container space-before">
-                {signInError
-                    ? <div><p className="error-message">{signInError.message}</p></div>
-                    : null}
+                {signInError//if there is a signInError
+                    ? <div><p className="error-message">{signInError.message}</p></div> //show its message
+                    : null}//if there is no signInError show nothing
                 <input
                     type="text"
                     value={emailValue}
