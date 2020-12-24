@@ -9,7 +9,8 @@ import { useUserGroups } from './useUserGroups';
 export const GroupsListPage = () => {
     const { isLoading: isLoadingAllGroups, groups: allGroups } = useGroups();
     const { isLoading: isLoadingUserGroups, userGroups } = useUserGroups();
-    const isLoading = isLoadingAllGroups && isLoadingUserGroups;
+    const isLoading = isLoadingAllGroups && isLoadingUserGroups;//both all and user groups
+    //are checked whether they have been loaded for the corresponding compones to be rendered simultaniously
 
     const notUserGroups = allGroups
         .filter(group => userGroups.every(userGroup => userGroup.id !== group.id));
